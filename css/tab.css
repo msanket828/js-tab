@@ -1,0 +1,64 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	width:50%;
+	margin: 50px auto;	
+	background: #eee;
+}
+
+.wrapper > h3 {
+	font-size: 31px;
+	text-transform: capitalize;
+	color: #fff;
+	background: #66694a;
+	text-align: center;
+	padding: 10px 0;
+	margin: 0 0 10px 0;
+}
+
+.tabs {
+	margin: 0 0 20px 0;	
+	padding:5px;
+}
+
+.tabs > li {
+	display: inline-block;
+}
+
+.tab-btn {
+	text-decoration: none;
+	text-transform: capitalize;
+	padding: 5px 10px;
+}
+
+.tab-btn:hover ,.tab-btn.active{
+	background: #000;
+	color: #fff;
+	transition: .3s ease;
+}
+
+.content {
+	padding: 10px 20px;	
+	display: none;
+}
+
+.content img {
+	width: 100%;
+	margin: 10px 0;
+}
+
+.content.active {
+	display: block;
+}
+
+@media only screen and (max-width: 767px) {
+	.wrapper { width: 60%}
+}
+
+@media only screen and (max-width: 540px) {
+	.wrapper { width: 70%}
+}

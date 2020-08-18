@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object and Thier methods</title>
+	<style type="text/css">
+    .Ulnode {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 60%;
+		margin: 0 auto;
+		background: #000;
+		color: #fff;
+		margin-bottom: 5px;
+	}	
+
+	.Ulnode li { list-style: none; }
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text" id="fname" name="" placeholder="firstname">
+		<input type="text" id="lname" name="" placeholder="lastname">
+		<button type="submit">Click Me</button>
+	</form>	
+	<ul class="Ulnode">
+		<li>FirstName</li>
+		<li>Lastname</li>
+	</ul>
+<script type="text/javascript">
+	var array= [],obj;
+	var fname=document.querySelector("#fname"),
+		lname=document.querySelector("#lname");
+
+
+	var body=document.querySelector("body");		
+	var btn=document.querySelector("button");
+	//for in method in objects
+	btn.addEventListener("click",function(e) {
+		e.preventDefault();
+		obj={
+			firstname:fname.value,
+			lastname:lname.value
+		}
+		array.push(obj);
+		displayData();
+	});
+  
+  //displayData	
+	function displayData() {		
+			var ul=document.createElement("ul");
+			ul.setAttribute("class","Ulnode");							
+				for(var i in array[array.length-1]) {
+					var li=document.createElement("li");
+					li.textContent=array[array.length-1][i];
+					// console.log(array[i]);	
+					ul.appendChild(li);
+				}
+		
+			body.appendChild(ul);		
+			deleteData();
+	}
+
+
+function deleteData() {
+var uL=document.querySelectorAll(".Ulnode");
+	uL.forEach(function(uL){
+		uL.addEventListener('click',function() {
+			body.removeChild(this);
+		});
+		
+	});
+}
+
+	
+</script>
+</body>
+</html>
